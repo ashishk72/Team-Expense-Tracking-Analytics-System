@@ -1,10 +1,10 @@
-# Expense Tracker 💸
+# Smart Expense Tracker & Analytics System 
 
-A full-stack MERN (MongoDB, Express, React, Node.js) application to manage and track your personal expenses with authentication, category-wise tracking, and dashboards.
+A full-stack MERN application for managing and analyzing personal expenses. The system provides secure JWT authentication, role-based access control, expense management, monthly budget monitoring, threshold-based alerts, audit logging, and personalized spending insights.
 
 ---
 
-## 🚀 Live Links
+##  Live Links
 
 - 🔗 **Frontend (Vercel)**: [https://expense-tracker-topaz-six.vercel.app](https://expense-tracker-topaz-six.vercel.app)
 - 🔗 **Backend (Render)**: [https://expense-tracker-ooym.onrender.com](https://expense-tracker-ooym.onrender.com)
@@ -12,35 +12,202 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application to manage and t
 
 ---
 
-## 📦 Features
+##  Features
 
-- User Registration & Login (JWT-based)
+### Authentication & Authorization
+- User Registration and Login
+- JWT-based authentication
+- Protected routes
+- Role-based access control
+
+### Expense Management
 - Add, Edit, and Delete Expenses
-- Expense Filtering by Date and Category
-- Dashboard for Total and Recent Expenses
-- Admin Panel to View All Expenses and Audit Logs
-- CSV Export for Admins
-- Insight Charts using Recharts
-- Responsive UI with TailwindCSS / Material UI
-- Toast Notifications for Feedback
+- Filter expenses by date and category
+- View recent and total expenses
+- CSV export for administrators
+
+### Budget Management
+- Monthly budget tracking
+- 80% budget warning
+- 100% budget exceeded alert
+- Budget utilization monitoring
+
+### Analytics & Insights
+- Category-wise spending analysis
+- Monthly spending analytics
+- Spending pattern analysis
+- Personalized expense insights
+
+### Audit & Administration
+- Admin dashboard
+- Audit log tracking
+- User activity monitoring
+- Role-based administrative access
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
-- **Frontend:** React, Redux Toolkit, TailwindCSS or MUI, Axios
-- **Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT
-- **Deployment:** Render (Backend), Vercel/Render (Frontend)
-- **Charting:** Recharts (Insights)
+- **Frontend:** React.js, JavaScript, Axios
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB, Mongoose
+- **Authentication:** JWT
+- **Charts:** Recharts
+- **Deployment:** Vercel, Render
+- **Tools:** Git, GitHub, VS Code
+
+
 
 ---
 
-## 🚀 Getting Started
+## Project Structure
+
+expense-tracker/
+│
+├── backend/
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── controllers/
+│   │   ├── auditController.js
+│   │   ├── authController.js
+│   │   ├── budgetController.js
+│   │   └── expenseController.js
+│   │
+│   ├── middlewares/
+│   │   ├── authMiddleware.js
+│   │   ├── errorHandler.js
+│   │   └── notFound.js
+│   │
+│   ├── models/
+│   │   ├── AuditLog.js
+│   │   ├── Budget.js
+│   │   ├── Expense.js
+│   │   └── User.js
+│   │
+│   ├── routes/
+│   │   ├── auditRoutes.js
+│   │   ├── authRoutes.js
+│   │   ├── budgetRoutes.js
+│   │   └── expenseRoutes.js
+│   │
+│   ├── utils/
+│   │   └── generateToken.js
+│   │
+│   ├── package.json
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── api/
+│   │   │   ├── audit.js
+│   │   │   ├── auth.js
+│   │   │   ├── axios.js
+│   │   │   ├── budget.js
+│   │   │   └── expense.js
+│   │   │
+│   │   ├── components/
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   │
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── AdminPanel.jsx
+│   │   │   ├── AuditLogs.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── ExpenseForm.jsx
+│   │   │   ├── Insights.jsx
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── NotFound.jsx
+│   │   │   └── RegisterPage.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   ├── vercel.json
+│   └── vite.config.js
+│
+├── screenshots/
+│   ├── admin-panel.png
+│   ├── audit-logs.png
+│   ├── dashboard.png
+│   ├── expenses.png
+│   ├── insight.png
+│   ├── login.png
+│   └── register.png
+│
+├── .gitignore
+└── README.md
+
+
+
+##  System Architecture
+
+
+                    User
+                      |
+                      v
+              React Frontend
+                      |
+                      | REST API / HTTP
+                      v
+              Express.js Backend
+                      |
+          +-----------+-----------+
+          |           |           |
+          v           v           v
+       Routes     Middleware   Controllers
+                                  |
+                                  v
+                               Models
+                                  |
+                                  v
+                              MongoDB
+
+
+---
+
+## Application Flow
+User
+ |
+ +---- Register / Login
+ |
+ v
+JWT Authentication
+ |
+ v
+Dashboard
+ |
+ +----------------------+----------------------+
+ |                      |                      |
+ v                      v                      v
+Expense Management   Budget Monitoring    Analytics
+ |                      |                      |
+ v                      v                      v
+MongoDB              Alerts              Spending Insights
+ |
+ v
+Audit Logs
+ |
+ v
+Admin Panel
+
+---
+
+##  Getting Started
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/sharmaHarshit2000/expense-tracker.git
+git clone https://github.com/ashishk72/Team-Expense-Tracking-Analytics-System
 cd expense-tracker
 ```
 
@@ -86,7 +253,7 @@ npm run dev
 
 ---
 
-## ⚙️ Deployment
+##  Deployment
 
 ### Backend (Render):
 
@@ -103,111 +270,50 @@ npm run dev
 
 ---
 
-## 📁 Folder Structure
 
-```txt
-expense-tracker/
-├── backend/
-│   ├── server.js
-│   ├── config/
-│   ├── middlewares/
-│   │   ├── authMiddleware.js
-│   │   ├── errorHandler.js
-│   │   └── notFound.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── expenseRoutes.js
-│   │   └── auditRoutes.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── expenseController.js
-│   │   └── auditController.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Expense.js
-│   │   └── AuditLog.js
-│   └── utils/
-│       └── generateToken.js
-│
-├── frontend/
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── ProtectedRoute.jsx
-│   │   ├── Footer.jsx
-│   ├── pages/
-│   │   ├── LoginPage.jsx
-│   │   ├── RegisterPage.jsx
-│   │   ├── Dashboard.jsx
-│   │   ├── AdminPanel.jsx
-│   │   ├── ExpenseForm.jsx
-│   │   ├── AuditLogs.jsx
-│   │   └── Insight.jsx
-│   ├── context/
-│   │   └── AuthContext.jsx
-│   ├── api/
-│   │   ├── auth.js
-│   │   ├── audit.js
-│   │   ├── expense.js
-│   │   └── axios.js
-│
-├── screenshots/
-│   ├── login.png
-│   ├── register.png
-│   ├── dashboard.png
-│   ├── expenses.png
-│   ├── admin-panel.png
-│   ├── audit-logs.png
-│   └── insight.png
-```
+##  Screenshots
+
+ To view **Audit Logs** and **Admin Panel**, login as an **admin** user.
 
 ---
 
-## 📸 Screenshots
-
-🧑‍💼 To view **Audit Logs** and **Admin Panel**, login as an **admin** user.
-
----
-
-### 🔐 Login Page  
+###  Login Page  
 ![Login](./screenshots/login.png)
 
 ---
 
-### 📝 Register Page  
+###  Register Page  
 ![Register](./screenshots/register.png)
 
 ---
 
-### 📊 Dashboard  
+###  Dashboard  
 ![Dashboard](./screenshots/dashboard.png)
 
 ---
 
-### 💰 Expenses  
+###  Expenses  
 ![Expenses](./screenshots/expenses.png)
 
 ---
 
-### 📁 Audit Logs  
+###  Audit Logs  
 ![Audit Logs](./screenshots/audit-logs.png)
 
 ---
 
-### 🛠️ Admin Panel  
+###  Admin Panel  
 ![Admin Panel](./screenshots/admin-panel.png)
 
 ---
 
-### 📈 Insights (Charts via Recharts)
+###  Insights (Charts via Recharts)
 ![Insights](./screenshots/insight.png)
 
 ---
 
-## 🧑‍💻 Author
+##  Author
 
-**Harshit Sharma**  
-📧 harshitsharma9989@gmail.com  
-📞 9369966830  
-🔗 [GitHub Profile](https://github.com/sharmaHarshit2000)
+**Ashish Kumar**  
+📧 ashishk07376@gmail.com   
+🔗 [GitHub Profile](https://github.com/ashishk72)
