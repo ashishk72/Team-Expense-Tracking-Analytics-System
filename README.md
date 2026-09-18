@@ -62,90 +62,90 @@ A full-stack MERN application for managing and analyzing personal expenses. The 
 
 ## Project Structure
 
-expense-tracker/
-│
-├── backend/
-│   ├── config/
-│   │   └── db.js
-│   │
-│   ├── controllers/
-│   │   ├── auditController.js
-│   │   ├── authController.js
-│   │   ├── budgetController.js
-│   │   └── expenseController.js
-│   │
-│   ├── middlewares/
-│   │   ├── authMiddleware.js
-│   │   ├── errorHandler.js
-│   │   └── notFound.js
-│   │
-│   ├── models/
-│   │   ├── AuditLog.js
-│   │   ├── Budget.js
-│   │   ├── Expense.js
-│   │   └── User.js
-│   │
-│   ├── routes/
-│   │   ├── auditRoutes.js
-│   │   ├── authRoutes.js
-│   │   ├── budgetRoutes.js
-│   │   └── expenseRoutes.js
-│   │
-│   ├── utils/
-│   │   └── generateToken.js
-│   │
-│   ├── package.json
-│   └── server.js
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── api/
-│   │   │   ├── audit.js
-│   │   │   ├── auth.js
-│   │   │   ├── axios.js
-│   │   │   ├── budget.js
-│   │   │   └── expense.js
-│   │   │
-│   │   ├── components/
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Header.jsx
-│   │   │   ├── Loader.jsx
-│   │   │   └── ProtectedRoute.jsx
-│   │   │
-│   │   ├── context/
-│   │   │   └── AuthContext.jsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── AdminPanel.jsx
-│   │   │   ├── AuditLogs.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── ExpenseForm.jsx
-│   │   │   ├── Insights.jsx
-│   │   │   ├── LoginPage.jsx
-│   │   │   ├── NotFound.jsx
-│   │   │   └── RegisterPage.jsx
-│   │   │
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   ├── index.css
-│   │   └── main.jsx
-│   │
-│   ├── package.json
-│   ├── vercel.json
-│   └── vite.config.js
-│
-├── screenshots/
-│   ├── admin-panel.png
-│   ├── audit-logs.png
-│   ├── dashboard.png
-│   ├── expenses.png
-│   ├── insight.png
-│   ├── login.png
-│   └── register.png
-│
-├── .gitignore
-└── README.md
+    expense-tracker/
+    │
+    ├── backend/
+    │   ├── config/
+    │   │   └── db.js
+    │   │
+    │   ├── controllers/
+    │   │   ├── auditController.js
+    │   │   ├── authController.js
+    │   │   ├── budgetController.js
+    │   │   └── expenseController.js
+    │   │
+    │   ├── middlewares/
+    │   │   ├── authMiddleware.js
+    │   │   ├── errorHandler.js
+    │   │   └── notFound.js
+    │   │
+    │   ├── models/
+    │   │   ├── AuditLog.js
+    │   │   ├── Budget.js
+    │   │   ├── Expense.js
+    │   │   └── User.js
+    │   │
+    │   ├── routes/
+    │   │   ├── auditRoutes.js
+    │   │   ├── authRoutes.js
+    │   │   ├── budgetRoutes.js
+    │   │   └── expenseRoutes.js
+    │   │
+    │   ├── utils/
+    │   │   └── generateToken.js
+    │   │
+    │   ├── package.json
+    │   └── server.js
+    │
+    ├── frontend/
+    │   ├── public/
+    │   ├── src/
+    │   │   ├── api/
+    │   │   │   ├── audit.js
+    │   │   │   ├── auth.js
+    │   │   │   ├── axios.js
+    │   │   │   ├── budget.js
+    │   │   │   └── expense.js
+    │   │   │
+    │   │   ├── components/
+    │   │   │   ├── Footer.jsx
+    │   │   │   ├── Header.jsx
+    │   │   │   ├── Loader.jsx
+    │   │   │   └── ProtectedRoute.jsx
+    │   │   │
+    │   │   ├── context/
+    │   │   │   └── AuthContext.jsx
+    │   │   │
+    │   │   ├── pages/
+    │   │   │   ├── AdminPanel.jsx
+    │   │   │   ├── AuditLogs.jsx
+    │   │   │   ├── Dashboard.jsx
+    │   │   │   ├── ExpenseForm.jsx
+    │   │   │   ├── Insights.jsx
+    │   │   │   ├── LoginPage.jsx
+    │   │   │   ├── NotFound.jsx
+    │   │   │   └── RegisterPage.jsx
+    │   │   │
+    │   │   ├── App.jsx
+    │   │   ├── App.css
+    │   │   ├── index.css
+    │   │   └── main.jsx
+    │   │
+    │   ├── package.json
+    │   ├── vercel.json
+    │   └── vite.config.js
+    │
+    ├── screenshots/
+    │   ├── admin-panel.png
+    │   ├── audit-logs.png
+    │   ├── dashboard.png
+    │   ├── expenses.png
+    │   ├── insight.png
+    │   ├── login.png
+    │   └── register.png
+    │
+    ├── .gitignore
+    └── README.md
 
 
 
@@ -176,29 +176,30 @@ expense-tracker/
 ---
 
 ## Application Flow
-User
- |
- +---- Register / Login
- |
- v
-JWT Authentication
- |
- v
-Dashboard
- |
- +----------------------+----------------------+
- |                      |                      |
- v                      v                      v
-Expense Management   Budget Monitoring    Analytics
- |                      |                      |
- v                      v                      v
-MongoDB              Alerts              Spending Insights
- |
- v
-Audit Logs
- |
- v
-Admin Panel
+
+    User
+    |
+    +---- Register / Login
+    |
+    v
+    JWT Authentication
+    |
+    v
+    Dashboard
+    |
+    +----------------------+----------------------+
+    |                      |                      |
+    v                      v                      v
+    Expense Management   Budget Monitoring    Analytics
+    |                      |                      |
+    v                      v                      v
+    MongoDB              Alerts              Spending Insights
+    |
+    v
+    Audit Logs
+    |
+    v
+    Admin Panel
 
 ---
 
